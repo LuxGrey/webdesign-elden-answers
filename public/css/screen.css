@@ -13,6 +13,11 @@
 body {
   background-color: var(--base-color);
   color: var(--text-color);
+
+  /* these declarations are needed to achieve a sticky footer */
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 header {
@@ -22,6 +27,10 @@ header {
 footer {
   background-color: var(--base-color-dark);
   color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
 }
 
 .nav-link,
@@ -51,14 +60,53 @@ footer {
   border-color: var(--primary-brand-color);
 }
 
-#search-input {
-  background-color: inherit;
-  color: var(--text-color);
+.question-summary {
+  background-color: var(--base-color-dark);
 }
 
-#search-input::placeholder {
+.question-link {
+  color: var(--primary-brand-color);
+}
+
+.question-link:hover {
+  color: var(--primary-hover-color);
+}
+
+.form-control,
+.form-control:focus {
+  background-color: var(--base-color-dark);
+  color: var(--text-color);
+  border-color: var(--text-color-faded);
+}
+
+.form-control::placeholder {
   color: var(--text-color-faded);
   opacity: 1;
+}
+
+.form-floating>.form-control-plaintext~label::after,
+.form-floating>.form-control:focus~label::after,
+.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating>.form-select~label::after,
+.form-floating>.form-control:focus~label {
+  background-color: transparent;
+  color: var(--text-color-faded);
+  opacity: 1;
+}
+
+.form-login {
+  max-width: 30rem;
+  background-color: var(--base-color-dark);
+}
+
+.form-login input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-login input[type="email"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 #greeting-card-container {
@@ -78,4 +126,22 @@ footer {
 
 #quote-canvas {
   width: 100%;
+}
+
+#join-community-button {
+  font-size: 1.2rem;
+}
+
+#search-content-text {
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+#search-content-text a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+#search-content-text a:hover {
+  color: var(--primary-hover-color);
 }
