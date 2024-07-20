@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 433.68 77.52">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 60px;
+      }
+
+      .cls-2 {
+        font-size: 45px;
+      }
+
+      .cls-3 {
+        fill: #c09c52;
+        font-family: Garamond-Bold, Garamond;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(10.82 55.19)"><tspan class="cls-1" x="0" y="0">E</tspan><tspan class="cls-2" x="42.51" y="-5">LDEN ANSWER</tspan><tspan class="cls-1" x="381.42" y="0">S</tspan></text>
+</svg>
