@@ -7,7 +7,7 @@
   --primary-hover-color: #967636;
   --secondary-hover-color: #c19d5340;
   --text-color: #e0e0e0;
-  --text-color-faded: #999999;
+  --text-color-faded: #a5a5a5;
 }
 
 body {
@@ -21,6 +21,7 @@ header {
 
 footer {
   background-color: var(--base-color-dark);
+  color: var(--text-color);
 }
 
 nav {
@@ -65,4 +66,19 @@ nav {
 #search-input::placeholder {
   color: var(--text-color-faded);
   opacity: 1;
+}
+
+#greeting-card-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#greeting-card {
+  max-width: 40rem;
+  background-color: var(--primary-brand-color-light);
+  font-size: 2rem;
+  border-radius: 8px;
+  color: var(--base-color);
+  margin-left: auto;
+  margin-right: auto;
 }
