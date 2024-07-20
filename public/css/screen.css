@@ -3,22 +3,19 @@
   --base-color-light: #324948;
   --base-color-dark: #121a1a;
   --primary-brand-color: #c19d53;
-  --primary-light: #e5c88f;
+  --primary-brand-color-light: #e5c88f;
+  --primary-hover-color: #967636;
+  --secondary-hover-color: #c19d5340;
   --text-color: #e0e0e0;
+  --text-color-faded: #999999;
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: var(--base-color);
   color: var(--text-color);
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  padding: 0.5em;
   background-color: var(--base-color-dark);
 }
 
@@ -26,96 +23,46 @@ footer {
   background-color: var(--base-color-dark);
 }
 
-a {
-  text-decoration: none;
-}
-
-blockquote {
-  font-family: Georgia, serif;
-  font-style: italic;
-}
-
-nav ul {
-  display: flex;
+nav {
   justify-content: center;
-  align-items: center;
-  gap: 1em;
-  list-style: none;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 70rem;
 }
 
-nav ul li a {
-  padding: 0.5em;
-}
-
-/*
-.btn-primary {
-  border: 2px solid;
-  border-radius: 8px;
-  border-color: var(--primary-brand-color);
-  background-color: var(--primary-brand-color);
-  color: var(--base-color);
-  padding: 0.5em;
-  text-align: center;
-  width: fit-content;
-  white-space: nowrap;
-}
-
-.btn-secondary {
-  border: 2px solid;
-  border-radius: 8px;
-  border-color: var(--primary-brand-color);
-  color: var(--primary-brand-color);
-  padding: 0.5em;
-  text-align: center;
-  width: fit-content;
-  white-space: nowrap;
-}
-*/
-
-.quote {
-  font-size: 1.5em;
-  width: 30%;
-  margin: 6em auto 0 auto;
-  line-height: 1.5em;
-}
-
-.quote figcaption,
-.quote blockquote {
-  margin: 1em;
-}
-
-#search-input {
-  padding: 1em;
-  height: 2em;
-  width: 30em;
-  border: 1px solid;
-  border-radius: 8px;
-  border-color: var(--text-color);
-  background-color: var(--base-color);
+.nav-link,
+.nav-link:hover {
   color: var(--text-color);
 }
 
-#greeting-card {
-  width: 30%;
-  margin: 0 auto;
-  padding: 2em;
-  margin-top: 3em;
-  background-color: var(--primary-light);
-  font-size: 2em;
-  border-radius: 8px;
+.btn-primary {
+  background-color: var(--primary-brand-color);
+  border-color: var(--primary-brand-color);
 }
 
-#greeting-card p {
-  margin-bottom: 1em;
-  color: var(--base-color);
-  text-align: center;
-  line-height: 1.5em;
+.btn-primary:hover {
+  background-color: var(--primary-hover-color);
+  border-color: var(--primary-hover-color);
 }
 
-#greeting-card div {
-  display: flex;
-  justify-content: center;
+.btn-secondary {
+  background-color: inherit;
+  color: var(--primary-brand-color);
+  border-color: var(--primary-brand-color);
 }
 
-/* TODO maybe implement sticky footer */
+.btn-secondary:hover {
+  background-color: var(--secondary-hover-color);
+  color: var(--primary-brand-color);
+  border-color: var(--primary-brand-color);
+}
+
+#search-input {
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+#search-input::placeholder {
+  color: var(--text-color-faded);
+  opacity: 1;
+}
