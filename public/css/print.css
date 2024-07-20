@@ -1,1 +1,5 @@
-/* TODO define print layout*/
+@import url("common.css");
+
+canvas {
+  display: none;
+}

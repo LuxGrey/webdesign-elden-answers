@@ -1,0 +1,159 @@
+:root {
+  --base-color: #1e2c2b;
+  --base-color-light: #324948;
+  --base-color-dark: #121a1a;
+  --primary-brand-color: #c19d53;
+  --primary-brand-color-light: #e5c88f;
+  --primary-hover-color: #967636;
+  --secondary-hover-color: #c19d5340;
+  --text-color: #e0e0e0;
+  --text-color-faded: #a5a5a5;
+}
+
+body {
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--base-color-dark);
+}
+
+footer {
+  background-color: var(--base-color-dark);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-brand-color);
+}
+
+a:hover {
+  color: var(--primary-hover-color);
+}
+
+.badge {
+  background-color: var(--primary-brand-color-light);
+  color: var(--base-color-dark);
+}
+
+.nav-link,
+.nav-link:hover {
+  color: var(--text-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-brand-color);
+  border-color: var(--primary-brand-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover-color);
+  border-color: var(--primary-hover-color);
+}
+
+.btn-secondary {
+  background-color: inherit;
+  color: var(--primary-brand-color);
+  border-color: var(--primary-brand-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover-color);
+  color: var(--primary-brand-color);
+  border-color: var(--primary-brand-color);
+}
+
+.question-summary {
+  background-color: var(--base-color-dark);
+}
+
+.question-summary-stats {
+  width: 7rem;
+}
+
+@media (max-width: 992px) {
+  .question-summary-stats {
+    width: auto;
+  }
+}
+
+.question-summary-content {
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.form-control,
+.form-control:focus {
+  background-color: var(--base-color-dark);
+  color: var(--text-color);
+  border-color: var(--text-color-faded);
+}
+
+.form-control::placeholder {
+  color: var(--text-color-faded);
+  opacity: 1;
+}
+
+.form-floating>.form-control-plaintext~label::after,
+.form-floating>.form-control:focus~label::after,
+.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating>.form-select~label::after,
+.form-floating>.form-control:focus~label {
+  background-color: transparent;
+  color: var(--text-color-faded);
+  opacity: 1;
+}
+
+.form-login {
+  max-width: 30rem;
+  background-color: var(--base-color-dark);
+}
+
+.form-login input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-login input[type="email"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#greeting-card-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#greeting-card {
+  max-width: 40rem;
+  background-color: var(--primary-brand-color-light);
+  font-size: 2rem;
+  border-radius: 8px;
+  color: var(--base-color);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#quote-canvas {
+  width: 100%;
+}
+
+#join-community-button {
+  font-size: 1.2rem;
+}
+
+#search-content-text {
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+#search-content-text a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+#search-content-text a:hover {
+  color: var(--primary-hover-color);
+}
