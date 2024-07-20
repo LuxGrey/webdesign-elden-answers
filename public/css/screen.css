@@ -1,0 +1,60 @@
+@import "reset.css";
+
+:root {
+  --base-color: #1e2c2b;
+  --primary-brand-color: #c19d53;
+  --text-color: #e0e0e0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+nav ul li a {
+  padding: 0.5em;
+}
+
+.btn-primary {
+  border: 2px solid;
+  border-radius: 8px;
+  border-color: var(--primary-brand-color);
+  background-color: var(--primary-brand-color);
+  color: var(--base-color);
+  padding: 0.5em;
+}
+
+.btn-secondary {
+  border: 2px solid;
+  border-radius: 8px;
+  border-color: var(--primary-brand-color);
+  color: var(--primary-brand-color);
+  padding: 0.5em;
+}
+
+#search-input {
+  padding: 1em;
+  height: 2em;
+  width: 25em;
+  border: 1px solid;
+  border-radius: 8px;
+  border-color: var(--text-color);
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
