@@ -31,6 +31,16 @@ footer {
 
 a {
   text-decoration: none;
+  color: var(--primary-brand-color);
+}
+
+a:hover {
+  color: var(--primary-hover-color);
+}
+
+.badge {
+  background-color: var(--primary-brand-color-light);
+  color: var(--base-color-dark);
 }
 
 .nav-link,
@@ -64,12 +74,19 @@ a {
   background-color: var(--base-color-dark);
 }
 
-.question-link {
-  color: var(--primary-brand-color);
+.question-summary-stats {
+  width: 6rem;
 }
 
-.question-link:hover {
-  color: var(--primary-hover-color);
+@media (max-width: 992px) {
+  .question-summary-stats {
+    width: auto;
+  }
+}
+
+.question-summary-content {
+  flex-grow: 1;
+  max-width: 100%;
 }
 
 .form-control,
