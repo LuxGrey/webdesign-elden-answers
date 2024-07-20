@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark container">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-          <img id="logo" src="images/logo.svg" alt="Elden Answers logo" height="50" />
+          <img src="images/logo.svg" alt="Elden Answers logo" height="50" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar"
           aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,24 +34,24 @@
         <div class="collapse navbar-collapse gap-2" id="collapsingNavbar">
           <ul class="navbar-nav mb-2 mb-lg-0 gap-2">
             <li class="nav-item">
-              <a class="nav-link btn btn-dark" href="index.html">About</a>
+              <a class="nav-link btn btn-dark" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link btn btn-dark" href="index.html">Guidelines</a>
+              <a class="nav-link btn btn-dark" href="#">Guidelines</a>
             </li>
           </ul>
-          <div class="input-group mb-2 mb-lg-0">
+          <form class="input-group mb-2 mb-lg-0">
             <span class="input-group-text">
               <i class="bi bi-search"></i>
             </span>
-            <input class="form-control" type="search" id="search-input" placeholder="Search" aria-label="Search">
-          </div>
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          </form>
           <ul class="navbar-nav gap-2">
             <li class="nav-item">
-              <a href="index.html" class="btn btn-secondary text-nowrap">Log in</a>
+              <a href="./html/log-in.html" class="btn btn-secondary text-nowrap">Log in</a>
             </li>
             <li class="nav-item">
-              <a href="index.html" class="btn btn-primary text-nowrap">Sign up</a>
+              <a href="#" class="btn btn-primary text-nowrap">Sign up</a>
             </li>
           </ul>
         </div>
@@ -61,20 +61,23 @@
 
   <main class="container">
     <div id="greeting-card-container">
-      <div id="greeting-card" class="text-center p-5 my-5">
-        <p>
+      <div id="greeting-card" class="text-center p-5 mt-5 mb-2">
+        <p class="mb-4">
           Find the best answers to your Elden Ring questions,
           help others find theirs
         </p>
-        <div>
-          <a href="#" class="btn btn-primary px-5 py-3">Join the community</a>
-        </div>
+        <a id="join-community-button" href="#" class="btn btn-primary px-5 py-3">Join the community</a>
+        <p id="search-content-text" class="mt-2">
+          or <a href="./html/questions.html">search content</a>
+        </p>
       </div>
     </div>
-    <canvas id="quote-canvas"></canvas>
+    <canvas id="quote-canvas">
+      This canvas cycles through random quotes from Elden Ring characters.
+    </canvas>
   </main>
 
-  <footer class="py-3 my-4">
+  <footer class="py-3 mt-4">
     <div class="container">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
         <li class="nav-item"><a href="index.html" class="nav-link px-2">Home</a></li>

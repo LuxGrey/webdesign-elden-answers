@@ -1,77 +1,117 @@
 const quotes = [
   {
     quotee: "White Mask Varre",
-    quote: "Unfortunately for you, however, you are maidenless."
+    quote: [
+      "Unfortunately for you, however,",
+      "you are maidenless.",
+    ],
   },
   {
     quotee: "Sir Gideon Ofnir, the All-Knowing",
-    quote: "Find the Albinauric woman.",
+    quote: ["Find the Albinauric woman."],
   },
   {
     quotee: "Godrick the Grafted",
-    quote: "Forefathers, one and all… Bear witness!",
+    quote: ["Forefathers, one and all… Bear witness!"],
   },
   {
     quotee: "Blackguard Big Boggart",
-    quote: "Marika's tits, you must be 'ungry.",
+    quote: ["Marika's tits, you must be 'ungry."],
   },
   {
     quotee: "Miriel, Pastor of Vows",
-    quote: "Heresy is not native to the world; it is but a contrivance. All things can be conjoined.",
+    quote: [
+      "Heresy is not native to the world;",
+      "it is but a contrivance.",
+      "All things can be conjoined."
+    ],
   },
   {
     quotee: "Diallos",
-    quote: "The tale of House Hoslow is told in blood.",
+    quote: ["The tale of House Hoslow is told in blood."],
   },
   {
     quotee: "Smithing Master Hewg",
-    quote: "Well, where've you been hiding? I took you for dead. No matter. It's all the same. Lay out your arms, then.",
+    quote: [
+      "Well, where've you been hiding?",
+      "I took you for dead.",
+      "No matter. It's all the same.",
+      "Lay out your arms, then.",
+    ],
   },
   {
     quotee: "Melina",
-    quote: "Greetings, traveler, from beyond the fog. I am Melina. I offer you an accord.",
+    quote: [
+      "Greetings, traveler, from beyond the fog.",
+      "I am Melina. I offer you an accord."
+    ],
   },
   {
     quotee: "Godfrey, First Elden Lord",
-    quote: "I have given thee courtesy enough. Now I fight as Hoarah Loux, Warrior!",
+    quote: [
+      "I have given thee courtesy enough.",
+      "Now I fight as Hoarah Loux, Warrior!"
+    ],
   },
   {
     quotee: "Margit, the Fell Omen",
-    quote: "Put these foolish ambitions to rest.",
+    quote: ["Put these foolish ambitions to rest."],
   },
   {
     quotee: "Malenia, Blade of Miquella",
-    quote: "I am Malenia, Blade of Miquella. And I have never known defeat.",
+    quote: [
+      "I am Malenia, Blade of Miquella.",
+      "And I have never known defeat."
+    ],
   },
   {
     quotee: "Rykard, Lord of Blasphemy",
-    quote: "Join the Serpent King as family. Together, we shall devour the very gods.",
+    quote: [
+      "Join the Serpent King as family.",
+      "Together, we shall devour the very gods.",
+    ],
   },
   {
     quotee: "D, Hunter of the Dead",
-    quote: "Those who live in death should be well left alone.",
+    quote: [
+      "Those who live in death",
+      "should be well left alone."
+    ],
   },
   {
     quotee: "Rennala, Queen of the Full Moon",
-    quote: "Come, sweetings, time to be born, anew.",
+    quote: ["Come, sweetings, time to be born, anew."],
   },
   {
     quotee: "Shabriri",
-    quote: "Ahhh, may chaos take the world! May chaos take the world!",
+    quote: [
+      "Ahhh, may chaos take the world!",
+      "May chaos take the world!",
+    ],
   },
   {
     quotee: "Witch-Hunter Jerren",
-    quote: "A celebration of war! The Radahn Festival!",
+    quote: [
+      "A celebration of war!",
+      "The Radahn Festival!",
+    ],
   },
   {
     quotee: "Sorceress Sellen",
-    quote: "Anticipate grievances, young apprentice.",
+    quote: ["Anticipate grievances, young apprentice."],
   },
   {
     quotee: "Finger Reader Enia",
-    quote: "Now, go forth. Let the words of the Fingers guide you",
+    quote: [
+      "Now, go forth.",
+      "Let the words of the Fingers guide you",
+    ],
   }
 ];
+
+const lineHeight = 40;
+const lineGap = 40;
+const lineGapQuotee = lineGap * 2;
 
 function initQuoteUpdate() {
   updateQuote();
@@ -81,9 +121,14 @@ function initQuoteUpdate() {
 
 function updateQuote() {
   const quoteCanvas = document.getElementById("quote-canvas");
+
+  if (!quoteCanvas.getContext) {
+    return;
+  }
+
   const canvasContext = quoteCanvas.getContext("2d");
 
-  // fix canvas dimensions and resolution
+  // fix resolution
   // get the DPR and size of the canvas
   const dpr = window.devicePixelRatio;
   const rect = quoteCanvas.getBoundingClientRect();
@@ -99,12 +144,35 @@ function updateQuote() {
   quoteCanvas.style.width = `$(rect.width)px`;
   quoteCanvas.style.height = `$(rect.height)px`;
 
-
   // reset before rendering new quote
   canvasContext.reset();
 
   canvasContext.fillStyle = "#e0e0e0";
-  canvasContext.font = "italic 1rem Georgia"
+  canvasContext.font = "italic 4rem Georgia";
+  canvasContext.textAlign = "center";
   quoteObject = quotes[Math.floor(Math.random() * quotes.length)];
-  canvasContext.fillText(quoteObject.quote, 50, 50);
+
+  // draw quote text
+
+  // add 1 for quotee line
+  const amountLines = quoteObject.quote.length + 1;
+  let currentY = (quoteCanvas.height / 2) - ((amountLines / 2) * (lineHeight + lineGap)) - lineGap;
+  // draw quote lines
+  for (let i = 0; i < quoteObject.quote.length; i++) {
+    canvasContext.fillText(
+      quoteObject.quote[i],
+      quoteCanvas.width / 2,
+      currentY
+    );
+    currentY += (lineHeight + lineGap);
+  }
+
+  // draw quotee line
+  canvasContext.font = "4rem Georgia";
+  currentY += lineGapQuotee;
+  canvasContext.fillText(
+    "- " + quoteObject.quotee,
+    quoteCanvas.width / 2,
+    currentY
+  );
 }
